@@ -1,22 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 type AccorPropsType = {
     titleValue: string
-    // collapsed: boolean
+    collapsed: boolean
 }
 
-export function UncontrolledAccordion(props: AccorPropsType) {
-    // debugger
+function Accordion(props: AccorPropsType) {
+    debugger
     console.log("Accor rendering")
-    const[collapsed,setCollapsed]=useState(true)
-
     return (
         <div>
             <AccorTitle title={props.titleValue}/>
-            <button onClick={()=>{setCollapsed(!collapsed)}}>TOGGLE</button>
-
-            {!collapsed && <AccorBody/>}
-
+            {!props.collapsed && <AccorBody/>}
         </div>
     )
 }
@@ -25,7 +20,7 @@ type AccorTitlePropsType = {
 }
 
 function AccorTitle(props: AccorTitlePropsType) {
-    // debugger
+    debugger
     console.log("AccorTitle rendering")
     return (
         <h3>---{props.title}---</h3>
@@ -43,3 +38,4 @@ function AccorBody() {
     )
 }
 
+export default Accordion;
