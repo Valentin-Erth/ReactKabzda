@@ -8,13 +8,12 @@ type AccorPropsType = {
 export function UncontrolledAccordion(props: AccorPropsType) {
     // debugger
     console.log("Accor rendering")
-    const[collapsed,setCollapsed]=useState(true)
+    const[collapsed,setCollapsed]=useState(false)
 
     return (
         <div>
             <AccorTitle title={props.titleValue}/>
             <button onClick={()=>{setCollapsed(!collapsed)}}>TOGGLE</button>
-
             {!collapsed && <AccorBody/>}
 
         </div>

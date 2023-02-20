@@ -6,7 +6,7 @@ type AccorPropsType = {
 }
 
 function Accordion(props: AccorPropsType) {
-    debugger
+    // debugger
     console.log("Accor rendering")
     return (
         <div>
@@ -20,7 +20,7 @@ type AccorTitlePropsType = {
 }
 
 function AccorTitle(props: AccorTitlePropsType) {
-    debugger
+    // debugger
     console.log("AccorTitle rendering")
     return (
         <h3>---{props.title}---</h3>
