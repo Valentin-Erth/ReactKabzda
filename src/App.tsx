@@ -23,8 +23,8 @@ function App() {
 
             <Raiting value={raitingValue} onClick={setRaitingValue}/>
             {/*<UncntrolledRaiting/>*/}
-            {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
-            <UncontrolledOnOff onChange={setSwitchOn}/>
+            <OnOff on={switchOn} onChange={setSwitchOn}/>
+            {/*<UncontrolledOnOff onChange={setSwitchOn}/>*/}
 
             {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
             {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
