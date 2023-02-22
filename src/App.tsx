@@ -1,27 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {Raiting} from './Components/Raiting/Raiting';
+import {Raiting, RaitingValueType} from './Components/Raiting/Raiting';
 import Accordion from './Components/Acor/Acordion';
 import {OnOff} from "./Components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./Components/UncontrolledAcor/UncontrolledAcordion";
 import {UncntrolledRaiting} from "./Components/UncontrolledRaiting/UncntrolledRaiting";
 
 
-
 function App() {
+    let [raitingValue, setRaitingValue] = useState<RaitingValueType>(0)
+    let [acordionCollapsed, setAcordionCollapsed] = useState<boolean>(false)
 
     console.log("App rendering")
     return (
         <div className={"App"}>
+            <Accordion titleValue={"Menu"}
+                       setCollapsed={setAcordionCollapsed}
+                       collapsed={!acordionCollapsed}/>
+
+            <Raiting value={raitingValue} onClick={setRaitingValue}/>
+            {/*<UncntrolledRaiting/>*/}
             <OnOff/>
-            {/*<Accordion titleValue={"Menu"} collapsed={false}/>*/}
-            <UncontrolledAccordion titleValue={"Menu"}/>
+
+            {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
             {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
-            <UncntrolledRaiting/>
-            {/*<Raiting value={3}/>*/}
+
+
             {/*<OnOff on={true}/>*/}
             {/*<OnOff on={false}/>*/}
+
+
             {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
             {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
             {/*<Raiting value={0}/>*/}

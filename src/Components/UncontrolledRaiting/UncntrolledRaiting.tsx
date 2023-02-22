@@ -9,34 +9,41 @@ export function UncntrolledRaiting(props: RatingPropsType) {
     let [value, setValue] = useState(0)
     return (
         <div>
-            <Star selected={value > 0} callBack={setValue} value={1}/>
-            <Star selected={value > 1} callBack={setValue} value={2}/>
-            <Star selected={value > 2} callBack={setValue} value={3}/>
-            <Star selected={value > 3} callBack={setValue} value={4}/>
-            <Star selected={value > 4} callBack={setValue} value={5}/>
+            <Star selected={value > 0} setValue={() => {
+                setValue(1)
+            }}/>
+            <Star selected={value > 1} setValue={() => {
+                setValue(2)
+            }}/>
+            <Star selected={value > 2} setValue={() => {
+                setValue(3)
+            }}/>
+            <Star selected={value > 3} setValue={() => {
+                setValue(4)
+            }}/>
+            <Star selected={value > 4} setValue={() => {
+                setValue(5)
+            }}/>
         </div>
     )
 }
 
 type StarPropsType = {
     selected: boolean
-    callBack: (value: 1 | 2 | 3 | 4 | 5) => void
-    value: 1 | 2 | 3 | 4 | 5
+    setValue: () => void
+
 }
 
 export function Star(props: StarPropsType) {
     console.log("Star rendering")
-    const onClickHandler = (num: 1 | 2 | 3 | 4 | 5) => {
-        props.callBack(num)
+    const onClickHandler = () => {
+        props.setValue()
     }
     return (
-        <div>
-            <button onClick={() => {
-                onClickHandler(props.value)
-            }}>{props.selected ? <b>star</b> : "star"}
-            </button>
 
+    <span onClick = {onClickHandler} >
+        {props.selected ? <b> star</b> : " star"}
+</span>
 
-        </div>
-    )
+)
 }

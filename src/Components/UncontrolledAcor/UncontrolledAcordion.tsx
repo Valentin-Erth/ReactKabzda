@@ -8,26 +8,31 @@ type AccorPropsType = {
 export function UncontrolledAccordion(props: AccorPropsType) {
     // debugger
     console.log("Accor rendering")
-    const[collapsed,setCollapsed]=useState(false)
+    const [collapsed, setCollapsed] = useState(false)
 
     return (
         <div>
-            <AccorTitle title={props.titleValue}/>
-            <button onClick={()=>{setCollapsed(!collapsed)}}>TOGGLE</button>
+            <AccorTitle title={props.titleValue} setCollapsed={()=>{setCollapsed(!collapsed)}} />
             {!collapsed && <AccorBody/>}
 
         </div>
     )
 }
+
 type AccorTitlePropsType = {
     title: string
+    setCollapsed:()=>void
+
 }
 
 function AccorTitle(props: AccorTitlePropsType) {
     // debugger
     console.log("AccorTitle rendering")
+    const onClickHandler = () => {
+        props.setCollapsed()
+    }
     return (
-        <h3>---{props.title}---</h3>
+        <h3 onClick={onClickHandler}>---{props.title}---</h3>
     )
 }
 
