@@ -7,7 +7,7 @@ type AccorPropsType = {
 
 export function UncontrolledAccordion(props: AccorPropsType) {
     // debugger
-    console.log("Accor rendering")
+    console.log("UncontrolledAccordion rendering")
     const [collapsed, setCollapsed] = useState(false)
 
     return (

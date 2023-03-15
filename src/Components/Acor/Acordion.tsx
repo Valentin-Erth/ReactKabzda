@@ -1,6 +1,6 @@
 import React from 'react';
 
-type AccorPropsType = {
+export type AccorPropsType = {
     titleValue: string
     setCollapsed: (collapsed:boolean)=>void
     collapsed:boolean
