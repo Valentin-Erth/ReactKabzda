@@ -19,6 +19,7 @@ export const UncontrolledOnOff = (props: OnOffType) => {
     };
     const offStyle = {
         width: "30px",
+
         height: "20px",
         border: "1px solid black",
         display: "inline-block",

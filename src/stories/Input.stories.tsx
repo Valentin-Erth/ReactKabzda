@@ -1,6 +1,7 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
 import {action} from "@storybook/addon-actions";
 
+
 export default {
     title: "input",
 }
@@ -8,8 +9,10 @@ export const UncontrolledInput = () => <input/>;
 
 export const TrackValueOfUncontrolledInput = () => {
     const [value, setValue] = useState("")
+    // debugger
     const onChange=(event:ChangeEvent<HTMLInputElement>) => {
         const actualValue = event.currentTarget.value
+        // debugger
         setValue(actualValue);
     }
     return <><input onChange={onChange}/> - {value}</>;
@@ -25,3 +28,17 @@ export const TGetValueOfUncontrolledInputByButtonPress = () => {
 };
 
 export const ControlledInputWithFixValue = () => <input value={"IT-incubator"}/>;
+
+export const ControlledInput=()=>{
+    const [parentValue,setparentValue]=useState("")
+    const onChange=(event:ChangeEvent<HTMLInputElement>)=>{
+        setparentValue(event.currentTarget.value)
+    }
+return <input value={parentValue} onChange={onChange}/>
+}
+export const ControlledChekbox=()=>{
+
+}
+export const ControlledSelect=()=>{
+
+}
