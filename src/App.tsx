@@ -7,6 +7,7 @@ import {OnOff} from "./Components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./Components/UncontrolledAcor/UncontrolledAcordion";
 import {UncntrolledRaiting} from "./Components/UncontrolledRaiting/UncntrolledRaiting";
 import {UncontrolledOnOff} from "./Components/UncontrolledOnOff/UncontrolledOnOff";
+import {Select} from "./Components/Select/Select";
 
 
 function App() {
@@ -17,13 +18,20 @@ function App() {
     console.log("App rendering")
     return (
         <div className={"App"}>
-            <Accordion titleValue={"Menu"}
-                       setCollapsed={setAcordionCollapsed}
-                       collapsed={!acordionCollapsed}/>
-
-            <Raiting value={raitingValue} onClick={setRaitingValue}/>
+            {/*<Accordion titleValue={"Menu"}*/}
+            {/*           setCollapsed={setAcordionCollapsed}*/}
+            {/*           collapsed={!acordionCollapsed}*/}
+            {/*           items={[]}*/}
+            {/*onClick={()=>{}}/>*/}
+<Select value={"Dmitriy"} items={[
+    {title: "Dmitriy", value: 1},
+    {title: "Valera", value: 2},
+    {title: "Artem", value: 3},
+    {title: "Andrew", value: 4}
+]} onChange={()=>{}}/>
+            {/*<Raiting value={raitingValue} onClick={setRaitingValue}/>*/}
             {/*<UncntrolledRaiting/>*/}
-            <OnOff on={switchOn} onChange={setSwitchOn}/>
+            {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
             {/*<UncontrolledOnOff onChange={setSwitchOn}/>*/}
 
             {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}

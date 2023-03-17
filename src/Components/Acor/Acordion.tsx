@@ -1,9 +1,15 @@
 import React from 'react';
 
+type ItemType={
+    title: string
+    value: any
+}
 export type AccorPropsType = {
     titleValue: string
-    setCollapsed: (collapsed:boolean)=>void
-    collapsed:boolean
+    setCollapsed: (collapsed: boolean) => void
+    collapsed: boolean
+    items: ItemType[]
+    onClick:(value:any)=>void
 }
 
 function Accordion(props: AccorPropsType) {
@@ -12,31 +18,42 @@ function Accordion(props: AccorPropsType) {
     return (
         <div>
             <AccorTitle title={props.titleValue} setCollapsed={props.setCollapsed} collapsed={props.collapsed}/>
-            {!props.collapsed && <AccorBody/>}
+            {!props.collapsed && <AccorBody items={props.items} onClick={props.onClick}/>}
         </div>
     )
 }
+
 type AccorTitlePropsType = {
     title: string
-    setCollapsed:(collapsed:boolean)=>void
-    collapsed:boolean
+    setCollapsed: (collapsed: boolean) => void
+    collapsed: boolean
 }
 
 function AccorTitle(props: AccorTitlePropsType) {
     // debugger
     console.log("AccorTitle rendering")
     return (
-        <h3 onClick={()=>{props.setCollapsed(props.collapsed)}}>---{props.title}---</h3>
+        <h3 onClick={() => {
+            props.setCollapsed(props.collapsed)
+        }}>---{props.title}---</h3>
     )
 }
 
-function AccorBody() {
+export type AccorBodyPropsType = {
+    items: ItemType[]
+    onClick:(value:any)=>void
+}
+
+function AccorBody(props: AccorBodyPropsType) {
     console.log("AccorBody rendering")
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {props.items.map((el, i) => {
+                    return (
+                        <li onClick={()=>{props.onClick(el.value)}} key={i}>{el.title}</li>
+                    )
+                }
+            )}
         </ul>
     )
 }
