@@ -23,12 +23,12 @@ function App() {
             {/*           collapsed={!acordionCollapsed}*/}
             {/*           items={[]}*/}
             {/*onClick={()=>{}}/>*/}
-<Select value={"Dmitriy"} items={[
-    {title: "Dmitriy", value: 1},
-    {title: "Valera", value: 2},
-    {title: "Artem", value: 3},
-    {title: "Andrew", value: 4}
-]} onChange={()=>{}}/>
+{/*<Select value={"Dmitriy"} items={[*/}
+{/*    {title: "Dmitriy", value: 1},*/}
+{/*    {title: "Valera", value: 2},*/}
+{/*    {title: "Artem", value: 3},*/}
+{/*    {title: "Andrew", value: 4}*/}
+{/*]} onChange={()=>{}}/>*/}
             {/*<Raiting value={raitingValue} onClick={setRaitingValue}/>*/}
             {/*<UncntrolledRaiting/>*/}
             {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
