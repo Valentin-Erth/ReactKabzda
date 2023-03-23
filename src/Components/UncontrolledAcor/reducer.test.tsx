@@ -1,6 +1,6 @@
 import {reducer, StateType} from "./reducer";
 
-test("reducer ahould change value to opposite value",()=>{
+test("reducer should change value to opposite value",()=>{
 //data
     const state: StateType={
         collapsed:true
