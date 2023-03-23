@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+
 type OnOffType = {
     on: boolean
     onChange:(on:boolean)=>void
@@ -8,7 +9,7 @@ type OnOffType = {
 export const OnOff = (props: OnOffType) => {
 
     console.log("on: "+props.on)
-
+// debugger
     const onStyle = {
         width: "30px",
         height: "20px",

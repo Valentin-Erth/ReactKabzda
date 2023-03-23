@@ -10,10 +10,12 @@ type SelectPropsType = {
     onChange: (value: any) => void
     items: ItemType[]
 }
+
 export const Select = (props: SelectPropsType) => {
+
     const [active, setActive] = useState(false)
     const [hoverElementValue, setHoverElementValue] = useState(props.value)
-
+    console.log("Select Rendering")
     useEffect(()=>{
         setHoverElementValue(props.value)
     },[props.value])
@@ -65,4 +67,5 @@ export const Select = (props: SelectPropsType) => {
 
     );
 };
+
 
