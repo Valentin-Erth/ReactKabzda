@@ -10,9 +10,9 @@ import {UncontrolledOnOff} from "./Components/UncontrolledOnOff/UncontrolledOnOf
 import {Select} from "./Components/Select/Select";
 
 const SelectOpt=React.memo(Select)
-const OnOffOpt=React.memo(OnOff)
-const RaitingOpt=React.memo(Raiting)
+const UncntrolledRaitingOpt=React.memo(UncntrolledRaiting)
 const UncontrolledAccordionOpt=React.memo(UncontrolledAccordion)
+const UncontrolledOnOffOpt=React.memo(UncontrolledOnOff)
 function App() {
     let [raitingValue, setRaitingValue] = useState<RaitingValueType>(0);
     let [acordionCollapsed, setAcordionCollapsed] = useState<boolean>(false);
@@ -28,10 +28,10 @@ function App() {
             {/*           }}/>*/}
 
 
-            <RaitingOpt value={raitingValue} onClick={setRaitingValue}/>
-            {/*<UncntrolledRaiting/>*/}
-            <OnOffOpt on={switchOn} onChange={setSwitchOn}/>
-            {/*<UncontrolledOnOff onChange={setSwitchOn}/>*/}
+            {/*<Raiting value={raitingValue} onClick={setRaitingValue}/>*/}
+            <UncntrolledRaitingOpt Defaultvalue={0} onChange={()=>{}}/>
+            {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
+            <UncontrolledOnOffOpt onChange={()=>{}}/>
 
             <UncontrolledAccordionOpt titleValue={"Menu"}/>
             {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
