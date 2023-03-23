@@ -34,7 +34,7 @@ function App() {
             {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
             {/*<UncontrolledOnOff onChange={setSwitchOn}/>*/}
 
-            {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
+            <UncontrolledAccordion titleValue={"Menu"}/>
             {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
 

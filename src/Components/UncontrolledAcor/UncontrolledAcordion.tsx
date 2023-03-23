@@ -1,4 +1,6 @@
-import React, {useState} from 'react';
+import React, {useReducer} from 'react';
+import {reducer} from "./reducer";
+
 
 type AccorPropsType = {
     titleValue: string
@@ -8,20 +10,22 @@ type AccorPropsType = {
 export function UncontrolledAccordion(props: AccorPropsType) {
     // debugger
     console.log("UncontrolledAccordion rendering")
-    const [collapsed, setCollapsed] = useState(false)
-
+    // const [collapsed, setCollapsed] = useState(false)
+    const [state, dispatch] = useReducer(reducer, {collapsed: false})
     return (
         <div>
-            <AccorTitle title={props.titleValue} setCollapsed={()=>{setCollapsed(!collapsed)}} />
-            {!collapsed && <AccorBody/>}
-
+            <AccorTitle title={props.titleValue} setCollapsed={() => {
+                // debugger
+                dispatch({type: "TOGGLE-COLLAPSED"})
+            }}/>
+            {!state.collapsed && <AccorBody/>}
         </div>
     )
 }
 
 type AccorTitlePropsType = {
     title: string
-    setCollapsed:()=>void
+    setCollapsed: () => void
 
 }
 
