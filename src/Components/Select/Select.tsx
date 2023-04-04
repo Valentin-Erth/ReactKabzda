@@ -49,13 +49,14 @@ export const Select = (props: SelectPropsType) => {
     return (
         <>
             <div className={s.select} onKeyUp={onKeyUp} tabIndex={0}>
-                <span className={s.main} onClick={showItems}>{selectedItem && selectedItem.title}</span>
+                <span onClick={showItems}>{selectedItem && selectedItem.title}</span>
                 {
                     active &&
                     <div className={s.items}>
                         {props.items.map(el =>
                             <div onMouseEnter={()=>{setHoverElementValue(el.value)}}
-                                className={s.item + " " + (hoveredItem === el ? s.selected : "")} key={el.value}
+                                className={s.item + " " + (hoveredItem === el ? s.selected : "")}
+                                 key={el.value}
                                  onClick={() => {
                                      onItemClick(el.value)
                                  }}
