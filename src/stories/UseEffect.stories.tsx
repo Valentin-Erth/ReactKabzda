@@ -46,18 +46,21 @@ export const SetTimeoutExample = () => {
     //    },[])
     useEffect(()=>{
         console.log("useEffect every render")
-        setInterval(()=>{
+        const timerID=setInterval(()=>{
             //console.log("setInterval"+ counter)
             setTime(new Date)
+
         },1000)
        },[time])
     let watch=time.toLocaleTimeString()
     let date=time.toLocaleDateString()
+// const stop=()=>clearInterval(timerID)
     return <>
         <div>{watch}</div>
         <div>{date}</div>
         {/*Hello, counter:{counter}---fake: {fake}*/}
         {/*<button onClick={()=>{setCounter(counter+1)}}>Counter+</button>*/}
         {/*<button onClick={()=>{setFake(fake+1)}}>Fake+</button>*/}
+        {/*<button onClick={stop}>stop</button>*/}
     </>
 }
