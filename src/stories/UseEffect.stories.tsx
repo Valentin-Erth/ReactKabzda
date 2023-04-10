@@ -30,3 +30,34 @@ const [fake,setFake]=useState(1)
         <button onClick={()=>{setFake(fake+1)}}>Fake+</button>
     </>
 }
+
+export const SetTimeoutExample = () => {
+    const [counter,setCounter]=useState(1);
+    const [fake,setFake]=useState(1)
+    const [time,setTime]=useState(new Date)
+    console.log("SetTimeoutExample")
+    let timer=time.toLocaleTimeString()
+    // useEffect(()=>{
+    //     console.log("useEffect every render")
+    //     setInterval(()=>{
+    //         console.log("setInterval"+ counter)
+    //         setCounter((state)=>state+1)
+    //     },1000)
+    //    },[])
+    useEffect(()=>{
+        console.log("useEffect every render")
+        setInterval(()=>{
+            //console.log("setInterval"+ counter)
+            setTime(new Date)
+        },1000)
+       },[time])
+    let watch=time.toLocaleTimeString()
+    let date=time.toLocaleDateString()
+    return <>
+        <div>{watch}</div>
+        <div>{date}</div>
+        {/*Hello, counter:{counter}---fake: {fake}*/}
+        {/*<button onClick={()=>{setCounter(counter+1)}}>Counter+</button>*/}
+        {/*<button onClick={()=>{setFake(fake+1)}}>Fake+</button>*/}
+    </>
+}
