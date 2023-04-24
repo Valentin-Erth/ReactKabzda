@@ -49,7 +49,7 @@ export const Select = (props: SelectPropsType) => {
     return (
         <>
             <div className={s.select} onKeyUp={onKeyUp} tabIndex={0}>
-                <span onClick={showItems}>{selectedItem && selectedItem.title}</span>
+                <span className={s.span} onClick={showItems}>{selectedItem && selectedItem.title}</span>
                 {
                     active &&
                     <div className={s.items}>

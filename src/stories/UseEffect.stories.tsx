@@ -38,29 +38,30 @@ export const SetTimeoutExample = () => {
     console.log("SetTimeoutExample")
     let timer=time.toLocaleTimeString()
     // useEffect(()=>{
-    //     console.log("useEffect every render")
-    //     setInterval(()=>{
+    //   setInterval(()=>{
     //         console.log("setInterval"+ counter)
     //         setCounter((state)=>state+1)
     //     },1000)
     //    },[])
-    useEffect(()=>{
-        console.log("useEffect every render")
-        const timerID=setInterval(()=>{
-            //console.log("setInterval"+ counter)
-            setTime(new Date)
+    useEffect(()=> {
+        // console.log("useEffect every render")
+        const intervalID=setInterval(()=>{
+                // console.log("TICK")
+                setTime(new Date)
+            },1000)
+        return ()=> {//функция которая запускается когда компонента умирает
+            clearInterval(intervalID)
+        }
+           },[])
+        let watch=time.toLocaleTimeString()
+        let date=time.toLocaleDateString()
 
-        },1000)
-       },[time])
-    let watch=time.toLocaleTimeString()
-    let date=time.toLocaleDateString()
-// const stop=()=>clearInterval(timerID)
     return <>
         <div>{watch}</div>
         <div>{date}</div>
-        {/*Hello, counter:{counter}---fake: {fake}*/}
+        Hello, counter:{counter}---fake: {fake}
         {/*<button onClick={()=>{setCounter(counter+1)}}>Counter+</button>*/}
         {/*<button onClick={()=>{setFake(fake+1)}}>Fake+</button>*/}
-        {/*<button onClick={stop}>stop</button>*/}
+
     </>
 }
